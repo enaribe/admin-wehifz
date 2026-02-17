@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Landing page - reset body background */
+.landing-page * {
+  box-sizing: border-box;
+}
+
+.landing-page h1,
+.landing-page h2,
+.landing-page h3 {
+  margin: 0;
+}
+
+.landing-page p {
+  margin: 0;
+}
+
+@layer utilities {
+  /* Classe utilitaire pour inputs avec texte noir et placeholder gris */
+  .input-text-black::placeholder {
+    color: #6b7280 !important;
+    -webkit-text-fill-color: #6b7280 !important;
+    opacity: 1 !important;
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --sidebar-width: 256px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    sans-serif;
+}
+
+/* Placeholders gris pour tous les inputs (même avec style inline) */
+input::placeholder,
+textarea::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #6b7280 !important;
+}
+
+/* Support pour les anciens navigateurs */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #6b7280 !important;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Table styles */
+.table-container {
+  @apply overflow-x-auto rounded-lg border border-gray-200;
+}
+
+.table-container table {
+  @apply min-w-full divide-y divide-gray-200;
+}
+
+.table-container th {
+  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50;
+}
+
+.table-container td {
+  @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+}
+
+.table-container tbody tr:hover {
+  @apply bg-gray-50;
+}
